@@ -1,7 +1,7 @@
-package com.kriscfoster.school.student;
+package com.dship.animes.anime;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface StudentRepository extends JpaRepository<Student, Long> {}
+public interface AnimeRepository extends JpaRepository<Anime, Long> {}

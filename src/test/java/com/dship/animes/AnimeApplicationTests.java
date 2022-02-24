@@ -1,10 +1,10 @@
-package com.kriscfoster.school;
+package com.dship.animes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SchoolApplicationTests {
+class AnimeApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,23 +1,24 @@
-package com.kriscfoster.school.teacher;
+package com.dship.animes.anime;
 
+import com.dship.animes.watchlist.Watchlist;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.kriscfoster.school.subject.Subject;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class Teacher {
+public class Anime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "teacher")
-    private Set<Subject> subjects;
+    Long id;
 
     private String name;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "animes_in_watchlist")
+    private Set<Watchlist> watchlists = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -31,8 +32,8 @@ public class Teacher {
         this.name = name;
     }
 
-    public Set<Subject> getSubjects() {
-        return this.subjects;
+    public Set<Watchlist> getSubjects() {
+        return watchlists;
     }
 
 }
